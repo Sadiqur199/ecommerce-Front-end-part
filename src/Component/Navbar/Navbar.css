@@ -67,7 +67,17 @@ font-size: 22px;
 color: #010f1c;
 cursor: pointer;
 }
-.main_header .container .icon .account{
+.main_header .container .icon .account p{
   margin-right: 5px;
   margin-top:2px;
+}
+.main_header .container .icon .second_icon{
+  display: flex;
+}
+
+.main_header .container .icon .second_icon .link{
+  margin-right: 5px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #0989ff;
 }
