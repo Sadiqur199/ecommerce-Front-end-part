@@ -6,6 +6,8 @@ import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { RiLoginCircleLine } from "react-icons/ri";
+import { RiLogoutCircleLine } from "react-icons/ri";
 
 const Navbar = () => {
   return (
@@ -50,6 +52,7 @@ const Navbar = () => {
       </div>
       <div className="header">
         <div className="container">
+          <div className="nav">
           <ul>
             <li>
               <Link to='/'>Home</Link>
@@ -64,8 +67,10 @@ const Navbar = () => {
               <Link to='/contact'>Contact</Link>
             </li>
           </ul>
+          </div>
           <div className="auth">
-
+          <RiLoginCircleLine />
+          <RiLogoutCircleLine />
           </div>
         </div>
       </div>
