@@ -1,5 +1,4 @@
 import React from "react";
-import "./Navbar.css";
 import { FaTruckMoving } from "react-icons/fa";
 import logo from "../../../public/image/h-removebg-preview.png";
 import { CiHeart } from "react-icons/ci";
@@ -8,8 +7,15 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { RiLoginCircleLine } from "react-icons/ri";
 import { RiLogoutCircleLine } from "react-icons/ri";
+import { useAuth0 } from "@auth0/auth0-react";
+import "./Navbar.css";
 
 const Navbar = () => {
+  const { loginWithRedirect ,logout,user, isAuthenticated, isLoading } = useAuth0();
+  if (isLoading) {
+    return <div>Loading ...</div>;
+  }
+
   return (
     <div>
       <div className="nav-header">
@@ -33,12 +39,18 @@ const Navbar = () => {
             <button>Search</button>
           </div>
           <div className="icon">
-            <div className="account">
-              <div className="user_icon">
-                <FaUserCircle />
+            {
+              isAuthenticated &&
+              (
+                <div className="account">
+                <div className="user_icon">
+                  <FaUserCircle />
+                </div>
+                <p>Hello,{user.name}</p>
               </div>
-              <p>Hello ,user</p>
-            </div>
+              )
+            }
+
             <div className="second_icon">
               <Link to="/" className="link">
                 <CiHeart />
@@ -69,8 +81,13 @@ const Navbar = () => {
           </ul>
           </div>
           <div className="auth">
-          <button><RiLoginCircleLine /></button>
-           <button><RiLogoutCircleLine /></button>
+            {
+              isAuthenticated?
+              <button  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><RiLogoutCircleLine /></button> :
+              <button onClick={() => loginWithRedirect()}><RiLoginCircleLine /></button>
+
+            }
+
           </div>
         </div>
       </div>
