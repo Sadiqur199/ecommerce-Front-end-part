@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FaArrowRightLong } from "react-icons/fa6";
 import './Home.css'
@@ -10,8 +10,14 @@ import { FiTruck } from "react-icons/fi";
 import { CiDollar } from "react-icons/ci";
 import { BsPercent } from "react-icons/bs";
 import { FaHeadphones } from "react-icons/fa6";
+import HomeProduct from '../HomeProduct/HomeProduct'
+import { IoCartOutline } from "react-icons/io5";
+import { IoEyeOutline } from "react-icons/io5";
+import { FaRegHeart } from "react-icons/fa6";
 
 const Home = () => {
+  const [homeProduct , setHomeProduct] = useState(HomeProduct)
+  console.log(homeProduct)
   return (
     <div>
       <div className="top_banner">
@@ -99,6 +105,36 @@ const Home = () => {
               <p>24/7</p>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="product">
+        <div className="container">
+          {
+            homeProduct.map((curElm)=>{
+
+              return(
+                <>
+                <div className="box" key={curElm.id}>
+                  <div className="img_box">
+                    <img src={curElm.Img} alt={curElm.Title} />
+                    <div className="icon">
+                    <IoCartOutline />
+                    <IoEyeOutline />
+                    <FaRegHeart />
+                    </div>
+                  </div>
+                  <div className="detail">
+                    <p>{curElm.cat}</p>
+                    <h3>{curElm.Title}</h3>
+                    <h4>{curElm.price}</h4>
+                  </div>
+                </div>
+                </>
+              )
+              
+            })
+          }
+
         </div>
       </div>
     </div>

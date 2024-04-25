@@ -115,3 +115,20 @@ align-items: center;
 .about .container .box .detail p{
   color: #9a9a9a;
 }
+.product{
+  padding: 30px 40px;
+  width: 100%;
+}
+.product .container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.product .container .box{
+  padding: 10px 20px;
+  overflow: hidden;
+  width: 250px;
+  height: 300px;
+  border: 1px solid #cbc9cb;
+  margin-bottom: 20px;
+}
