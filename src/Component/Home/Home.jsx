@@ -108,6 +108,7 @@ const Home = () => {
         </div>
       </div>
       <div className="product">
+        <h2>Top Products</h2>
         <div className="container">
           {
             homeProduct.map((curElm)=>{
@@ -118,9 +119,9 @@ const Home = () => {
                   <div className="img_box">
                     <img src={curElm.Img} alt={curElm.Title} />
                     <div className="icon">
-                    <IoCartOutline />
-                    <IoEyeOutline />
-                    <FaRegHeart />
+                      <li>                <IoCartOutline /></li>
+                      <li>                    <IoEyeOutline /></li>
+                      <li>                    <FaRegHeart /></li>
                     </div>
                   </div>
                   <div className="detail">
