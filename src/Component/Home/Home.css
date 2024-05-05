@@ -199,3 +199,13 @@ border-bottom: 1px solid #e2e0e0;
   color: #0989FF;
   letter-spacing: 1px;
 }
+.banner{
+  padding: 20px 30px;
+  width: 100%;
+}
+.banner .container{
+  padding: 30px 40px;
+  background: #0989ff;
+  border-radius: 10px;
+  
+}
