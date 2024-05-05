@@ -8,7 +8,7 @@ import image3 from '../../../public/image/2p.png'
 import image4 from '../../../public/image/3p.png'
 import { FiTruck } from "react-icons/fi";
 import { CiDollar } from "react-icons/ci";
-import { BsCurrencyDollar, BsPercent } from "react-icons/bs";
+import { BsArrowBarRight, BsArrowRight, BsCurrencyDollar, BsPercent } from "react-icons/bs";
 import { FaHeadphones } from "react-icons/fa6";
 import HomeProduct from '../HomeProduct/HomeProduct'
 import { IoCartOutline } from "react-icons/io5";
@@ -144,7 +144,8 @@ const Home = () => {
         <div className="detail">
           <h4>LATEST FASION ADDED</h4>
           <h3>Winter Jacket For Men</h3>
-          <p><BsCurrencyDollar/>986</p>
+          <p>$ 986</p>
+          <Link to='/' className="link">Shop Now<BsArrowRight/> </Link>
         </div>
         <div className="img_box">
           <img src="https://i.ibb.co/nCcXgMC/image-removebg-preview-7.png" alt="Winter Collection" />
