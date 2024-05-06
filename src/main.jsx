@@ -7,12 +7,17 @@ import {
 import './index.css'
 import Main from './Main/Main';
 import { Auth0Provider } from '@auth0/auth0-react';
+import Product from './Component/Product/Product';
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Main></Main>
+    element: <Main></Main>,
   },
+  {
+    path:'/product',
+    element:<Product></Product>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
