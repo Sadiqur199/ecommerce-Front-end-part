@@ -11,8 +11,8 @@ const Footer = () => {
       <div className="footer">
         <div className="container">
           <div className="about">
-            <div className="logo">
-              <img src={logo} alt="logo" />
+            <div >
+              <img className="logo" src={logo} alt="logo" />
             </div>
             <div className="detail">
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quam repellat inventore eos delectus necessitatibus repellendus iste aspernatur ut optio.</p>
