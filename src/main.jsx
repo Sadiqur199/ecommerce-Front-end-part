@@ -8,16 +8,24 @@ import './index.css'
 import Main from './Main/Main';
 import { Auth0Provider } from '@auth0/auth0-react';
 import Product from './Component/Product/Product';
+import Home from './Component/Home/Home';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    children:[
+      {
+        path:'/',
+        element:<Home></Home>
+      },
+      {
+        path:'/product',
+        element:<Product></Product>
+      }
+    ]
   },
-  {
-    path:'/product',
-    element:<Product></Product>
-  }
+
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
