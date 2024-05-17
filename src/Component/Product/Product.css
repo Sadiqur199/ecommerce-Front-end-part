@@ -1,0 +1,37 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+.products{
+  padding: 30px 40px;
+  width: 100%;
+}
+.products h2{
+  font-size: 42px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #010f1c;
+}
+.products p{
+  margin-top: 10px;
+  color: #9a9a9a;
+}
+.products .container{
+  margin-top: 20px;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.products .container .filter{
+  padding: 20px 30px;
+}
+.products .container .filter .categories h3{
+color: #010f1c;
+font-size: 16px;
+text-transform: uppercase;
+font-weight: 600;
+}
