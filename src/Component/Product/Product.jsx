@@ -21,7 +21,7 @@ const Product = () => {
             </div>
           </div>
           <div className="productbox">
-            <div className="container">
+            <div className="contant">
               {ProductApi.map((curElm) => {
                 return (
                   <>
