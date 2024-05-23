@@ -35,3 +35,12 @@ font-size: 16px;
 text-transform: uppercase;
 font-weight: 600;
 }
+.products .container .filter .categories ul{
+  margin-top: 10px;
+}
+.products .container .filter .categories ul li{
+  list-style: none;
+  margin-top: 20px;
+  color: #010f1c;
+  cursor: pointer;
+}
