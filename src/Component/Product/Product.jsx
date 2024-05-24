@@ -23,9 +23,16 @@ const Product = () => {
 
   return (
     <div>
+      <div className="product_detail">
+        <div className="container">
+          <div className="productbox">
+            
+          </div>
+        </div>
+      </div>
+      <div className="products">
       <h2># Products</h2>
       <p>Home.Products</p>
-      <div className="products">
         <div className="container">
           <div className="filter">
             <div className="categories">

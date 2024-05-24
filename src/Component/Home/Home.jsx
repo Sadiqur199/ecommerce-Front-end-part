@@ -20,6 +20,7 @@ const Home = () => {
   console.log(homeProduct)
   return (
     <div>
+      
       <div className="top_banner">
         <div className="container">
           <div className="detail">
