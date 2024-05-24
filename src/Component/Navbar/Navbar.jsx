@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { FaTruckMoving } from "react-icons/fa";
 import logo from "../../../public/image/h-removebg-preview.png";
 import { CiHeart } from "react-icons/ci";
@@ -9,10 +9,13 @@ import { RiLoginCircleLine } from "react-icons/ri";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./Navbar.css";
+import { ProductContext } from "../../Main/Main";
 
-const Navbar = ({searchbtn}) => {
-  const [search, setSearch] = useState()
-  const { loginWithRedirect ,logout,user, isAuthenticated, isLoading } = useAuth0();
+const Navbar = () => {
+  const [search, setSearch] = useState("");
+  const { searchbtn } = useContext(ProductContext);
+  const { loginWithRedirect, logout, user, isAuthenticated, isLoading } = useAuth0();
+
   if (isLoading) {
     return <div>Loading ...</div>;
   }
@@ -33,27 +36,21 @@ const Navbar = ({searchbtn}) => {
           <div className="search_box">
             <input
               type="search"
-              name=""
-              id=""
               value={search}
               placeholder="Enter Your Product Name"
               onChange={(e) => setSearch(e.target.value)}
             />
-            <button onClick={()=> searchbtn(search)}>Search</button>
+            <button onClick={() => searchbtn(search)}>Search</button>
           </div>
           <div className="icon">
-            {
-              isAuthenticated &&
-              (
-                <div className="account">
+            {isAuthenticated && (
+              <div className="account">
                 <div className="user_icon">
                   <FaUserCircle />
                 </div>
-                <p>Hello,{user.name}</p>
+                <p>Hello, {user.name}</p>
               </div>
-              )
-            }
-
+            )}
             <div className="second_icon">
               <Link to="/" className="link">
                 <CiHeart />
@@ -68,29 +65,31 @@ const Navbar = ({searchbtn}) => {
       <div className="header">
         <div className="container">
           <div className="nav">
-          <ul>
-            <li>
-              <Link to='/' className="link">Home</Link>
-            </li>
-            <li>
-              <Link to='/product' className="link">Product</Link>
-            </li>
-            <li>
-              <Link to='/about' className="link">About</Link>
-            </li>
-            <li>
-              <Link to='/contact' className="link">Contact</Link>
-            </li>
-          </ul>
+            <ul>
+              <li>
+                <Link to='/' className="link">Home</Link>
+              </li>
+              <li>
+                <Link to='/product' className="link">Product</Link>
+              </li>
+              <li>
+                <Link to='/about' className="link">About</Link>
+              </li>
+              <li>
+                <Link to='/contact' className="link">Contact</Link>
+              </li>
+            </ul>
           </div>
           <div className="auth">
-            {
-              isAuthenticated?
-              <button  onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}><RiLogoutCircleLine /></button> :
-              <button onClick={() => loginWithRedirect()}><RiLoginCircleLine /></button>
-
-            }
-
+            {isAuthenticated ? (
+              <button onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })}>
+                <RiLogoutCircleLine />
+              </button>
+            ) : (
+              <button onClick={() => loginWithRedirect()}>
+                <RiLoginCircleLine />
+              </button>
+            )}
           </div>
         </div>
       </div>
