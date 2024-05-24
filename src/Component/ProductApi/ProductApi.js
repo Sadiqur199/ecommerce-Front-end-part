@@ -2,28 +2,28 @@ const ProductApi = [
   {
     id:1,
     Title:"Blegar for men",
-    cat:"man",
+    cat:"Man",
     price:"$200",
     Img:'https://i.ibb.co/fXYVzfn/image-removebg-preview-7.png'
   },
   {
     id:2,
     Title:"T-shirt for men",
-    cat:"man",
+    cat:"Man",
     price:"$100",
     Img:'https://i.ibb.co/fXYVzfn/image-removebg-preview-7.png'
   },
   {
     id:3,
     Title:"Shirt for men",
-    cat:"man",
+    cat:"Man",
     price:"$150",
     Img:'https://i.ibb.co/fXYVzfn/image-removebg-preview-7.png'
   },
   {
     id:4,
     Title:"Pant for men",
-    cat:"man",
+    cat:"Man",
     price:"$170",
     Img:'https://i.ibb.co/fXYVzfn/image-removebg-preview-7.png'
   },

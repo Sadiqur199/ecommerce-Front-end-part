@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaTruckMoving } from "react-icons/fa";
 import logo from "../../../public/image/h-removebg-preview.png";
 import { CiHeart } from "react-icons/ci";
@@ -10,7 +10,8 @@ import { RiLogoutCircleLine } from "react-icons/ri";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({searchbtn}) => {
+  const [search, setSearch] = useState()
   const { loginWithRedirect ,logout,user, isAuthenticated, isLoading } = useAuth0();
   if (isLoading) {
     return <div>Loading ...</div>;
@@ -34,9 +35,11 @@ const Navbar = () => {
               type="search"
               name=""
               id=""
+              value={search}
               placeholder="Enter Your Product Name"
+              onChange={(e) => setSearch(e.target.value)}
             />
-            <button>Search</button>
+            <button onClick={()=> searchbtn(search)}>Search</button>
           </div>
           <div className="icon">
             {
