@@ -7,6 +7,10 @@ import ProductApi from '../Component/ProductApi/ProductApi';
 export const ProductContext = createContext();
 
 const Main = () => {
+  // product details
+  const [detail, setDetail] = useState([])
+  // filtered products
+
   const [products, setProducts] = useState(ProductApi);
 
   const searchbtn = (searchTerm) => {
@@ -17,8 +21,12 @@ const Main = () => {
     setProducts(filteredProducts);
   };
 
+  const view = (product) =>{
+    setDetail([{...products}])
+  }
+
   return (
-    <ProductContext.Provider value={{ products, searchbtn }}>
+    <ProductContext.Provider value={{ products, searchbtn ,detail,view}}>
       <Navbar />
       <Outlet />
       <Footer />

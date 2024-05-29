@@ -5,7 +5,7 @@ import { IoCartOutline, IoEyeOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 
 const Product = () => {
-  const { products } = useContext(ProductContext);
+  const { products, detail, view } = useContext(ProductContext);
   const [filteredProducts, setFilteredProducts] = useState(products);
 
   useEffect(() => {
@@ -23,16 +23,31 @@ const Product = () => {
 
   return (
     <div>
-      <div className="product_detail">
-        <div className="container">
-          <div className="productbox">
-            
+      {detail.length > 0 && (
+        <div className="product_detail">
+          <div className="container">
+            {detail.map((curElm) => (
+              <div className="productbox" key={curElm.id}>
+                <div className="img_box">
+                  <img src={curElm.Img} alt="" />
+                </div>
+                <div className="detail">
+                  <h4>{curElm.cat}</h4>
+                  <h2>{curElm.Title}</h2>
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, inventore. Eligendi cum nobis impedit, ipsa ducimus officia harum veniam cupiditate.
+                  </p>
+                  <h3>{curElm.Price}</h3>
+                  <button>Add To Cart</button>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      </div>
+      )}
       <div className="products">
-      <h2># Products</h2>
-      <p>Home.Products</p>
+        <h2># Products</h2>
+        <p>Home.Products</p>
         <div className="container">
           <div className="filter">
             <div className="categories">
@@ -53,7 +68,7 @@ const Product = () => {
                     <img src={curElm.Img} alt={curElm.Title} />
                     <div className="icon">
                       <li><IoCartOutline /></li>
-                      <li><IoEyeOutline /></li>
+                      <li onClick={() => view(curElm)}><IoEyeOutline /></li>
                       <li><FaRegHeart /></li>
                     </div>
                   </div>
@@ -71,4 +86,5 @@ const Product = () => {
     </div>
   );
 };
+
 export default Product;
