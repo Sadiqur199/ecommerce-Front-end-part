@@ -9,6 +9,7 @@ export const ProductContext = createContext();
 const Main = () => {
   // product details
   const [detail, setDetail] = useState([])
+  const[close,setClose] = useState(false)
   // filtered products
 
   const [products, setProducts] = useState(ProductApi);
@@ -22,11 +23,12 @@ const Main = () => {
   };
 
   const view = (product) =>{
-    setDetail([{...products}])
+    setDetail([{...product}])
+    setClose(true)
   }
 
   return (
-    <ProductContext.Provider value={{ products, searchbtn ,detail,view}}>
+    <ProductContext.Provider value={{ products, searchbtn ,detail,view,close,setClose}}>
       <Navbar />
       <Outlet />
       <Footer />

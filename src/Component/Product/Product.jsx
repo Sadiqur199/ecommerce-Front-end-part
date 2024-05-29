@@ -3,9 +3,11 @@ import { ProductContext } from "../../Main/Main";
 import "./Product.css";
 import { IoCartOutline, IoEyeOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
+import { RxCrossCircled } from "react-icons/rx";
+
 
 const Product = () => {
-  const { products, detail, view } = useContext(ProductContext);
+  const { products, detail, view,close,setClose } = useContext(ProductContext);
   const [filteredProducts, setFilteredProducts] = useState(products);
 
   useEffect(() => {
@@ -23,9 +25,10 @@ const Product = () => {
 
   return (
     <div>
-      {detail.length > 0 && (
+      {close && detail.length > 0 && (
         <div className="product_detail">
           <div className="container">
+           <button onClick={()=>setClose(false)}> <RxCrossCircled /></button>
             {detail.map((curElm) => (
               <div className="productbox" key={curElm.id}>
                 <div className="img_box">
