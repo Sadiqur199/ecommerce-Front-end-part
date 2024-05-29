@@ -28,7 +28,7 @@ const Product = () => {
       {close && detail.length > 0 && (
         <div className="product_detail">
           <div className="container">
-           <button onClick={()=>setClose(false)}> <RxCrossCircled /></button>
+           <button onClick={()=>setClose(false)} className="closebtn"> <RxCrossCircled /></button>
             {detail.map((curElm) => (
               <div className="productbox" key={curElm.id}>
                 <div className="img_box">

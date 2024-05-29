@@ -123,3 +123,31 @@ font-weight: 600;
   color: #0989ff;
   letter-spacing: 1px;
 }
+.product_detail{
+  margin-top: 30px;
+  padding: 30px 40px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  margin-top: -10%;
+  background:rgba(0,0,0,0.24) ;
+}
+.product_detail .container{
+  margin-top: 7%;
+  margin-left: 8%;
+  width: 1000px;
+  height: 550px;
+  background: #fff;
+  padding:20px 30px;
+  border-radius: 10px;
+  box-shadow: rgba(0,0,0,0.24) 0px 3px 8px;
+}
+.product_detail .container .closebtn{
+  margin-left: 100%;
+  border: none;
+  outline: none;
+  background: none;
+  font-size: 22px;
+  cursor: pointer;
+}
