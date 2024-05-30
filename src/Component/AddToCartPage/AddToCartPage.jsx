@@ -6,6 +6,34 @@ import './AddToCartPage.css'
 
 const AddToCartPage = () => {
   const { cart,setCart } = useContext(ProductContext);
+
+  const incqty = (product) => {
+    const exist = cart.find((x)=>{
+      return x.id === product.id
+    })
+    setCart(cart.map((curElm) =>{
+      return curElm.id === product.id?{...exist, qty: exist.qty+1}:curElm
+    }))
+  }
+  const decqty = (product) => {
+    const exist = cart.find((x)=>{
+      return x.id === product.id
+    })
+    setCart(cart.map((curElm) =>{
+      return curElm.id === product.id?{...exist, qty: exist.qty-1}:curElm
+    }))
+  }
+  // remove Product 
+  const removeProduct = (product) => {
+    const exist = cart.find((x)=>{
+      return x.id === product.id
+    })
+    if(exist.qty>0){
+      setCart(cart.filter((x) =>{
+        return x.id !== product.id
+      }))
+    }
+  }
   return (
     <div>
       <div className="cartContainer">
@@ -29,12 +57,12 @@ const AddToCartPage = () => {
                     <h3>{curElm.Title}</h3>
                     <p>{curElm.price}</p>
                     <div className="qty">
-                      <button className='incqty'>+</button>
+                      <button onClick={() =>incqty(curElm)} className='incqty'>+</button>
                       <input type="text" value={curElm.qty}/>
-                      <button className='decqty'>-</button>
+                      <button onClick={() =>decqty(curElm)}className='decqty'>-</button>
                     </div>
                     <h4>Sub Total:${curElm.price * curElm.qty}</h4>
-                    <button><AiOutlineCloseCircle/></button>
+                    <button onClick={() =>removeProduct(curElm)}><AiOutlineCloseCircle/></button>
                   </div>
                 </div>
               )
