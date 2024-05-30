@@ -1,0 +1,16 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+.cartContainer{
+  padding: 40px 50px;
+  width: 100%;
+  background: #f1f1f1;
+  border-bottom: 1px solid #9a9a9a;
+}
+.cartContainer .emptyCart{
+  margin-top: 30px;
+  margin-left: 40%;
+}

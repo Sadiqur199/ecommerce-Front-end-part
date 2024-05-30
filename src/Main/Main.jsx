@@ -13,6 +13,8 @@ const Main = () => {
   // filtered products
 
   const [products, setProducts] = useState(ProductApi);
+  // add to cart
+  const[cart,setCart] = useState([])
 
   const searchbtn = (searchTerm) => {
     const filteredProducts = ProductApi.filter((product) => 
@@ -27,8 +29,13 @@ const Main = () => {
     setClose(true)
   }
 
+  // add to cart section
+  const addtocart = (product) =>{
+
+  }
+
   return (
-    <ProductContext.Provider value={{ products, searchbtn ,detail,view,close,setClose}}>
+    <ProductContext.Provider value={{ products, searchbtn ,detail,view,close,setClose,cart,setCart,addtocart}}>
       <Navbar />
       <Outlet />
       <Footer />

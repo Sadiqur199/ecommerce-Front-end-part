@@ -7,7 +7,7 @@ import { RxCrossCircled } from "react-icons/rx";
 
 
 const Product = () => {
-  const { products, detail, view,close,setClose } = useContext(ProductContext);
+  const { products, detail, view,close,setClose,addtocart } = useContext(ProductContext);
   const [filteredProducts, setFilteredProducts] = useState(products);
 
   useEffect(() => {
@@ -70,7 +70,7 @@ const Product = () => {
                   <div className="img_box">
                     <img src={curElm.Img} alt={curElm.Title} />
                     <div className="icon">
-                      <li><IoCartOutline /></li>
+                      <li onClick={()=>addtocart(curElm)}><IoCartOutline /></li>
                       <li onClick={() => view(curElm)}><IoEyeOutline /></li>
                       <li><FaRegHeart /></li>
                     </div>
