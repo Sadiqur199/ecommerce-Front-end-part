@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { ProductContext } from '../../Main/Main';
-import { AiOutlineClockCircle } from 'react-icons/ai';
+import {  AiOutlineCloseCircle } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import './AddToCartPage.css'
 
@@ -28,7 +28,7 @@ const AddToCartPage = () => {
                     <h4>{curElm.cat}</h4>
                     <h3>{curElm.Title}</h3>
                     <p>{curElm.price}</p>
-                    <button><AiOutlineClockCircle/></button>
+                    <button><AiOutlineCloseCircle/></button>
                   </div>
                 </div>
               )
