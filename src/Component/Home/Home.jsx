@@ -45,8 +45,8 @@ const Home = () => {
                   <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum, inventore. Eligendi cum nobis impedit, ipsa ducimus officia harum veniam cupiditate.
                   </p>
-                  <h3>{curElm.Price}</h3>
-                  <button>Add To Cart</button>
+                  <h3>${curElm.Price}</h3>
+                  <button onClick={()=>addtocart(curElm)}>Add To Cart</button>
                 </div>
               </div>
             ))}
@@ -167,7 +167,7 @@ const Home = () => {
                   <div className="detail">
                     <p>{curElm.cat}</p>
                     <h3>{curElm.Title}</h3>
-                    <h4>{curElm.price}</h4>
+                    <h4>${curElm.price}</h4>
                   </div>
                 </div>
               </>
