@@ -30,8 +30,13 @@ const Main = () => {
   }
 
   // add to cart section
+  const exist = cart.find((x) =>{
+    return x.id === products.id
+  })
   const addtocart = (product) =>{
-
+    if(exist){
+      
+    }
   }
 
   return (

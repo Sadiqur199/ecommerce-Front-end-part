@@ -13,7 +13,7 @@ const AddToCartPage = () => {
           cart.length ===0 &&
           <div className="emptyCart">
           <h2 className='empty'>Cart Is Empty</h2>
-          <Link to="/product">Shop Now</Link>
+          <Link to="/product" className='emptyCartBtn'>Shop Now</Link>
           </div>
         }
         <div className="content">

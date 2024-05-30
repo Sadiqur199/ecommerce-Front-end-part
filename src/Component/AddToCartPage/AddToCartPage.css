@@ -14,3 +14,17 @@
   margin-top: 30px;
   margin-left: 40%;
 }
+.cartContainer .emptyCart h2{
+  font-size: 32px;
+  color: #010f1c;
+  text-decoration: uppercase;
+  font-weight: 300;
+  margin-bottom: 30px;
+}
+.cartContainer .emptyCart .emptyCartBtn{
+margin-left: 70px;
+text-decoration: none;
+color: #fff;
+padding: 10px 20px;
+background: #010f1c;
+}
