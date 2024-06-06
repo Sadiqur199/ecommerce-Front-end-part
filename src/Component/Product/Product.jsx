@@ -4,6 +4,7 @@ import "./Product.css";
 import { IoCartOutline, IoEyeOutline } from "react-icons/io5";
 import { FaRegHeart } from "react-icons/fa";
 import { RxCrossCircled } from "react-icons/rx";
+import { useAuth0 } from "@auth0/auth0-react";
 
 
 const Product = () => {
@@ -22,6 +23,7 @@ const Product = () => {
       setFilteredProducts(updatedProducts);
     }
   };
+  const { loginWithRedirect,isAuthenticated, isLoading } = useAuth0();
 
   return (
     <div>
@@ -70,7 +72,11 @@ const Product = () => {
                   <div className="img_box">
                     <img src={curElm.Img} alt={curElm.Title} />
                     <div className="icon">
-                      <li onClick={()=>addtocart(curElm)}><IoCartOutline /></li>
+                      {
+                        isAuthenticated ?
+                        <li onClick={()=>addtocart(curElm)}><IoCartOutline /></li>:
+                        <li onClick={()=>alert('Login First')}><IoCartOutline /></li>
+                      }
                       <li onClick={() => view(curElm)}><IoEyeOutline /></li>
                       <li><FaRegHeart /></li>
                     </div>

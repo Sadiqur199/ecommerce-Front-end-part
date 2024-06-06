@@ -65,7 +65,7 @@ const AddToCartPage = () => {
                       <input type="text" value={curElm.qty}/>
                       <button onClick={() =>decqty(curElm)}className='decqty'>-</button>
                     </div>
-                    <h4>Sub Total:${curElm.price * curElm.qty}</h4>
+                    <h4 className='subtotal'>Sub Total:${curElm.price * curElm.qty}</h4>
                     </div>
                     <div className="close">
                     <button onClick={() =>removeProduct(curElm)}><AiOutlineCloseCircle/></button>
