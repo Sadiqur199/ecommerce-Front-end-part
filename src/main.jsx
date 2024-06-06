@@ -10,6 +10,7 @@ import { Auth0Provider } from '@auth0/auth0-react';
 import Product from './Component/Product/Product';
 import Home from './Component/Home/Home';
 import AddToCartPage from './Component/AddToCartPage/AddToCartPage';
+import Contact from './Component/Contact/Contact';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
       {
         path:'/cart',
         element:<AddToCartPage></AddToCartPage>
+      },
+      {
+        path:'/contact',
+        element:<Contact></Contact>
       }
     ]
   },
