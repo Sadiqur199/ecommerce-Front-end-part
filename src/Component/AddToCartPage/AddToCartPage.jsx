@@ -56,6 +56,7 @@ const AddToCartPage = () => {
                     <img src={curElm.Img} alt="" />
                   </div>
                   <div className='detail'>
+                    <div className="info">
                     <h4>{curElm.cat}</h4>
                     <h3>{curElm.Title}</h3>
                     <p>{curElm.price}</p>
@@ -65,7 +66,10 @@ const AddToCartPage = () => {
                       <button onClick={() =>decqty(curElm)}className='decqty'>-</button>
                     </div>
                     <h4>Sub Total:${curElm.price * curElm.qty}</h4>
+                    </div>
+                    <div className="close">
                     <button onClick={() =>removeProduct(curElm)}><AiOutlineCloseCircle/></button>
+                    </div>
                   </div>
                 </div>
               )
@@ -73,8 +77,12 @@ const AddToCartPage = () => {
           }
 
         </div>
-
-        <h2 className="totalprice">Total:${TotalPrice}</h2>
+        {
+          cart.length>0 &&<>
+                  <h2 className="totalprice">Total:${TotalPrice}</h2>
+                  <button className='checkout'>CheckOut</button>
+          </>
+        }
       </div>
     </div>
   );

@@ -28,3 +28,24 @@ color: #fff;
 padding: 10px 20px;
 background: #010f1c;
 }
+.cartContainer .content{
+  max-width: 100%;
+  padding: 20px 30px;
+}
+.cartContainer .content .cart_item{
+  padding: 20px 30px;
+  display: flex;
+  background: #fff;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+.cartContainer .content .cart_item .img_box{
+padding: 20px 20px;
+background: #f1f1f1;
+}
+.cartContainer .content .cart_item .img_box img{
+  width: 200px;
+  height: 250px;
+}
