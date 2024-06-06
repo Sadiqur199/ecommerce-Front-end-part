@@ -35,7 +35,8 @@ const AddToCartPage = () => {
     }
   }
   // total price
-  const TotalPrice = cart.reduce((price,item) =>price+item.qty*item.Price,0)
+  const TotalPrice = cart.reduce((price, item) => price + item.qty * item.price, 0);
+
   return (
     <div>
       <div className="cartContainer">
@@ -73,7 +74,7 @@ const AddToCartPage = () => {
 
         </div>
 
-        <h2 className="totalprice">${TotalPrice}</h2>
+        <h2 className="totalprice">Total:${TotalPrice}</h2>
       </div>
     </div>
   );
